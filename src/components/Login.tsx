@@ -28,16 +28,16 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <div className="login-header">
+        {/* <div className="login-header">
           <div className="logo-icon">
             <GraduationCap size={28} />
           </div>
           <h2>Success Helper</h2>
-        </div>
+        </div> */}
         
         <div className="welcome-section">
-          <h1>Welcome Back</h1>
-          <p>Please enter your details to access the Success Helper</p>
+          <h1>Sign In</h1>
+          <p>Please enter your details to access the System</p>
         </div>
 
         <form onSubmit={handleSubmit} className="login-form">
