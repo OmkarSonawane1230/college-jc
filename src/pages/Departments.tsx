@@ -6,16 +6,15 @@ interface Department {
   id: string;
   name: string;
   hodName: string;
-  totalStudents: number;
   action: string;
 }
 
 const initialDepartments: Department[] = [
-  { id: '1', name: 'Computer Engineering', hodName: 'Dr. Smith', totalStudents: 320, action: '' },
-  { id: '2', name: 'Civil Engineering', hodName: 'Dr. Johnson', totalStudents: 250, action: '' },
-  { id: '3', name: 'Mechanical Engineering', hodName: 'Dr. Williams', totalStudents: 280, action: '' },
-  { id: '4', name: 'Instrumentation Engineering', hodName: 'Dr. Brown', totalStudents: 180, action: '' },
-  { id: '5', name: 'Automobile Engineering', hodName: 'Dr. Davis', totalStudents: 150, action: '' }
+  { id: '1', name: 'Computer Engineering', hodName: 'Dr. Smith', action: '' },
+  { id: '2', name: 'Civil Engineering', hodName: 'Dr. Johnson', action: '' },
+  { id: '3', name: 'Mechanical Engineering', hodName: 'Dr. Williams', action: '' },
+  { id: '4', name: 'Instrumentation Engineering', hodName: 'Dr. Brown', action: '' },
+  { id: '5', name: 'Automobile Engineering', hodName: 'Dr. Davis', action: '' }
 ];
 
 export default function Departments() {
@@ -24,13 +23,12 @@ export default function Departments() {
   const [editingDept, setEditingDept] = useState<Department | null>(null);
   const [formData, setFormData] = useState({
     name: '',
-    hodName: '',
-    totalStudents: ''
+    hodName: ''
   });
 
   const openAddModal = () => {
     setEditingDept(null);
-    setFormData({ name: '', hodName: '', totalStudents: '' });
+    setFormData({ name: '', hodName: '' });
     setIsModalOpen(true);
   };
 
@@ -38,14 +36,13 @@ export default function Departments() {
     setEditingDept(dept);
     setFormData({
       name: dept.name,
-      hodName: dept.hodName,
-      totalStudents: dept.totalStudents.toString()
+      hodName: dept.hodName
     });
     setIsModalOpen(true);
   };
 
   const handleSave = () => {
-    if (!formData.name || !formData.hodName || !formData.totalStudents) {
+    if (!formData.name || !formData.hodName) {
       alert('Please fill all fields');
       return;
     }
@@ -54,7 +51,7 @@ export default function Departments() {
       // Update existing department
       setDepartments(departments.map(d => 
         d.id === editingDept.id 
-          ? { ...d, name: formData.name, hodName: formData.hodName, totalStudents: parseInt(formData.totalStudents) }
+          ? { ...d, name: formData.name, hodName: formData.hodName }
           : d
       ));
     } else {
@@ -63,7 +60,6 @@ export default function Departments() {
         id: Date.now().toString(),
         name: formData.name,
         hodName: formData.hodName,
-        totalStudents: parseInt(formData.totalStudents),
         action: ''
       };
       setDepartments([...departments, newDept]);
@@ -101,7 +97,6 @@ export default function Departments() {
             <tr>
               <th>Department Name</th>
               <th>HOD Name</th>
-              <th>Total Students</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -117,9 +112,6 @@ export default function Departments() {
                   </div>
                 </td>
                 <td>{dept.hodName}</td>
-                <td>
-                  <span className="student-count">{dept.totalStudents}</span>
-                </td>
                 <td>
                   <div className="action-buttons">
                     <button 
@@ -179,17 +171,6 @@ export default function Departments() {
                   value={formData.hodName}
                   onChange={(e) => setFormData({ ...formData, hodName: e.target.value })}
                   data-testid="hod-name-input"
-                />
-              </div>
-
-              <div className="form-field">
-                <label>Total Students</label>
-                <input
-                  type="number"
-                  placeholder="Total Students"
-                  value={formData.totalStudents}
-                  onChange={(e) => setFormData({ ...formData, totalStudents: e.target.value })}
-                  data-testid="total-students-input"
                 />
               </div>
             </div>

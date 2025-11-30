@@ -3,15 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FAF9F8;
+  background: var(--color-bg-secondary);
   padding: 20px;
 }
 
 .login-card {
-  background: #FFFFFF;
+  background: var(--color-bg-primary);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  border: 1px solid #EDEBE9;
+  border: 1px solid var(--color-border-primary);
   padding: 40px;
   width: 100%;
   max-width: 420px;
@@ -30,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0078D4;
+  background: var(--color-primary);
   border-radius: 8px;
   color: #FFFFFF;
 }
@@ -38,7 +37,7 @@
 .login-header h2 {
   margin: 0;
   font-size: 20px;
-  color: #323130;
+  color: var(--color-text-primary);
   font-weight: 600;
 }
 
@@ -49,13 +48,13 @@
 .welcome-section h1 {
   margin: 0 0 8px 0;
   font-size: 28px;
-  color: #323130;
+  color: var(--color-text-primary);
   font-weight: 700;
 }
 
 .welcome-section p {
   margin: 0;
-  color: #605E5C;
+  color: var(--color-text-secondary);
   font-size: 14px;
 }
 
@@ -74,27 +73,26 @@
 .form-group label {
   font-size: 14px;
   font-weight: 500;
-  color: #323130;
+  color: var(--color-text-primary);
 }
 
 .form-group input {
   padding: 12px 16px;
-  border: 1px solid #EDEBE9;
+  border: 1px solid var(--color-border-primary);
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.15s ease;
   outline: none;
-  background: #FFFFFF;
-  color: #323130;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 .form-group input:focus {
-  border-color: #0078D4;
-  box-shadow: 0 0 0 1px #0078D4;
+  border-color: var(--color-primary);
 }
 
 .form-group input:hover {
-  border-color: #C8C6C4;
+  border-color: var(--color-border-secondary);
 }
 
 .password-input-wrapper {
@@ -114,7 +112,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #605E5C;
+  color: var(--color-icon-secondary);
   padding: 4px;
   display: flex;
   align-items: center;
@@ -124,22 +122,21 @@
 }
 
 .password-toggle:hover {
-  color: #323130;
-  background: #F3F2F1;
+  color: var(--color-icon-primary);
 }
 
 .error-message {
   padding: 12px;
-  background: #FDE7E9;
-  border: 1px solid #A4262C;
+  background: var(--color-danger-light);
+  border: 1px solid var(--color-danger);
   border-radius: 6px;
-  color: #A4262C;
+  color: var(--color-danger);
   font-size: 13px;
 }
 
 .login-button {
   padding: 14px;
-  background: #0078D4;
+  background: var(--color-primary);
   color: #FFFFFF;
   border: none;
   border-radius: 6px;
@@ -150,11 +147,11 @@
 }
 
 .login-button:hover {
-  background: #106EBE;
+  background: var(--color-primary-hover);
 }
 
 .login-button:active {
-  background: #005A9E;
+  background: var(--color-primary-active);
 }
 
 .login-footer {
@@ -163,11 +160,11 @@
   justify-content: center;
   gap: 12px;
   font-size: 13px;
-  color: #605E5C;
+  color: var(--color-text-secondary);
 }
 
 .login-footer a {
-  color: #0078D4;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -176,7 +173,7 @@
 }
 
 .login-footer span {
-  color: #C8C6C4;
+  color: var(--color-border-secondary);
 }
 
 /* Dark Mode - Class-based (manual theme selection) */

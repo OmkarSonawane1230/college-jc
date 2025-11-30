@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Eye, EyeOff, GraduationCap } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import '../styles/Login.css';
 
 export default function Login() {
@@ -21,19 +21,13 @@ export default function Login() {
 
     const success = login(username, password);
     if (!success) {
-      setError('Invalid credentials. Try principal/principal123 or hod/hod123');
+      setError('Invalid credentials. Try admin/admin123 or hod/hod123');
     }
   };
 
   return (
     <div className="login-container">
       <div className="login-card">
-        {/* <div className="login-header">
-          <div className="logo-icon">
-            <GraduationCap size={28} />
-          </div>
-          <h2>Success Helper</h2>
-        </div> */}
         
         <div className="welcome-section">
           <h1>Sign In</h1>

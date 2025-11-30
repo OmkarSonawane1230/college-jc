@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
-  LayoutDashboard, 
   Building2, 
   TrendingUp, 
   LogOut, 
   User,
-  Settings
+  Settings,
+  BarChart3
 } from 'lucide-react';
 import '../styles/Layout.css';
 
@@ -46,16 +46,15 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   const getMenuItems = () => {
-    if (user?.role === 'principal') {
+    if (user?.role === 'admin') {
       return [
-        { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
         { icon: Building2, label: 'Departments', path: '/departments' },
         { icon: Settings, label: 'Settings', path: '/settings' }
       ];
     } else if (user?.role === 'hod') {
       return [
-        { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
         { icon: TrendingUp, label: 'Success', path: '/success-index' },
+        { icon: BarChart3, label: 'API', path: '/api' },
         { icon: Settings, label: 'Settings', path: '/settings' }
       ];
     }

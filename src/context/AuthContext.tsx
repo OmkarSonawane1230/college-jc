@@ -4,7 +4,7 @@ export interface User {
   id: string;
   username: string;
   password?: string;
-  role: 'principal' | 'hod';
+  role: 'admin' | 'hod';
   name: string;
 }
 
@@ -20,10 +20,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const USERS: User[] = [
   {
     id: '1',
-    username: 'principal',
-    password: 'principal123',
-    role: 'principal',
-    name: 'Principal'
+    username: 'admin',
+    password: 'admin123',
+    role: 'admin',
+    name: 'Admin'
   },
   {
     id: '2',

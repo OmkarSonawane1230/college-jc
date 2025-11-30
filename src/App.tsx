@@ -2,10 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './components/Login';
 import Layout from './components/Layout';
-import PrincipalDashboard from './pages/PrincipalDashboard';
 import Departments from './pages/Departments';
-import HODDashboard from './pages/HODDashboard';
 import SuccessIndex from './pages/SuccessIndex';
+import API from './pages/API';
 import Settings from './pages/Settings';
 import './App.css';
 
@@ -17,7 +16,12 @@ function ProtectedRoute({ children, allowedRole }: { children: React.ReactNode; 
   }
 
   if (allowedRole && user.role !== allowedRole) {
-    return <Navigate to="/dashboard" replace />;
+    // Redirect to appropriate page based on role
+    if (user.role === 'admin') {
+      return <Navigate to="/departments" replace />;
+    } else if (user.role === 'hod') {
+      return <Navigate to="/success-index" replace />;
+    }
   }
 
   return <>{children}</>;
@@ -35,23 +39,17 @@ function AppRoutes() {
     );
   }
 
+  // Redirect based on user role
+  const defaultRoute = user.role === 'admin' ? '/departments' : '/success-index';
+
   return (
     <Routes>
-      <Route path="/login" element={<Navigate to="/dashboard" replace />} />
-      <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              {user.role === 'principal' ? <PrincipalDashboard /> : <HODDashboard />}
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
+      <Route path="/login" element={<Navigate to={defaultRoute} replace />} />
+      <Route path="/" element={<Navigate to={defaultRoute} replace />} />
       <Route
         path="/departments"
         element={
-          <ProtectedRoute allowedRole="principal">
+          <ProtectedRoute allowedRole="admin">
             <Layout>
               <Departments />
             </Layout>
@@ -69,6 +67,16 @@ function AppRoutes() {
         }
       />
       <Route
+        path="/api"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <API />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/settings"
         element={
           <ProtectedRoute>
@@ -78,17 +86,17 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to={defaultRoute} replace />} />
     </Routes>
   );
 }
 
 const App = () => (
-  <BrowserRouter>
-    <AuthProvider>
-      <AppRoutes />
-    </AuthProvider>
-  </BrowserRouter>
+      <BrowserRouter>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </BrowserRouter>
 );
 
 export default App;

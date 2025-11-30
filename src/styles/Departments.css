@@ -14,13 +14,13 @@
   margin: 0 0 4px 0;
   font-size: 20px;
   font-weight: 600;
-  color: #323130;
+  color: var(--color-text-primary);
 }
 
 .departments-subtitle {
   margin: 0;
   font-size: 14px;
-  color: #605E5C;
+  color: var(--color-text-secondary);
 }
 
 .add-department-btn {
@@ -28,7 +28,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: #0078D4;
+  background: var(--color-primary);
   color: #FFFFFF;
   border: none;
   border-radius: 6px;
@@ -39,18 +39,17 @@
 }
 
 .add-department-btn:hover {
-  background: #106EBE;
+  background: var(--color-primary-hover);
 }
 
 .add-department-btn:active {
-  background: #005A9E;
+  background: var(--color-primary-active);
 }
 
 .table-container {
-  background: #FFFFFF;
+  background: var(--color-bg-primary);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  border: 1px solid #EDEBE9;
+  border: 1px solid var(--color-border-primary);
   overflow: hidden;
 }
 
@@ -60,7 +59,7 @@
 }
 
 .departments-table thead {
-  background: #F3F2F1;
+  background: var(--color-bg-tertiary);
 }
 
 .departments-table th {
@@ -68,19 +67,19 @@
   text-align: left;
   font-size: 13px;
   font-weight: 600;
-  color: #323130;
+  color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  border-bottom: 1px solid #EDEBE9;
+  border-bottom: 1px solid var(--color-border-primary);
 }
 
 .departments-table tbody tr {
-  border-bottom: 1px solid #EDEBE9;
+  border-bottom: 1px solid var(--color-border-primary);
   transition: background 0.15s ease;
 }
 
 .departments-table tbody tr:hover {
-  background: #FAF9F8;
+  background: var(--color-bg-secondary);
 }
 
 .departments-table tbody tr:last-child {
@@ -90,7 +89,7 @@
 .departments-table td {
   padding: 14px 16px;
   font-size: 14px;
-  color: #323130;
+  color: var(--color-text-primary);
 }
 
 .dept-name-cell {
@@ -106,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0078D4;
+  background: var(--color-primary);
   border-radius: 6px;
   color: #FFFFFF;
   flex-shrink: 0;
@@ -114,8 +113,8 @@
 
 .student-count {
   padding: 6px 12px;
-  background: #E1F5FE;
-  color: #0078D4;
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
   border-radius: 6px;
   font-weight: 600;
   font-size: 13px;
@@ -139,23 +138,23 @@
 }
 
 .edit-btn {
-  background: #DFF6DD;
-  color: #107C10;
-  border: 1px solid #107C10;
+  background: var(--color-secondary-lighter);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
 }
 
 .edit-btn:hover {
-  background: #C8E6C9;
+  background: var(--color-secondary-light);
 }
 
 .delete-btn {
-  background: #FDE7E9;
-  color: #A4262C;
-  border: 1px solid #A4262C;
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
 }
 
 .delete-btn:hover {
-  background: #FFCDD2;
+  background: var(--color-danger-lighter);
 }
 
 /* Modal Styles */
@@ -174,17 +173,16 @@
 }
 
 .modal-content {
-  background: #FFFFFF;
+  background: var(--color-bg-primary);
   border-radius: 12px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border: 1px solid #EDEBE9;
+  border: 1px solid var(--color-border-primary);
 }
 
 .modal-header {
   padding: 20px 24px;
-  border-bottom: 1px solid #EDEBE9;
+  border-bottom: 1px solid var(--color-border-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,14 +192,14 @@
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  color: #323130;
+  color: var(--color-text-primary);
 }
 
 .modal-close-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #605E5C;
+  color: var(--color-icon-secondary);
   padding: 8px;
   display: flex;
   align-items: center;
@@ -211,8 +209,8 @@
 }
 
 .modal-close-btn:hover {
-  background: #F3F2F1;
-  color: #323130;
+  background: var(--color-bg-tertiary);
+  color: var(--color-icon-primary);
 }
 
 .modal-body {
@@ -231,32 +229,31 @@
 .form-field label {
   font-size: 14px;
   font-weight: 500;
-  color: #323130;
+  color: var(--color-text-primary);
 }
 
 .form-field input {
   padding: 10px 12px;
-  border: 1px solid #EDEBE9;
+  border: 1px solid var(--color-border-primary);
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.15s ease;
   outline: none;
-  background: #FFFFFF;
-  color: #323130;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 .form-field input:focus {
-  border-color: #0078D4;
-  box-shadow: 0 0 0 1px #0078D4;
+  border-color: var(--color-primary);
 }
 
 .form-field input:hover {
-  border-color: #C8C6C4;
+  border-color: var(--color-border-secondary);
 }
 
 .modal-footer {
   padding: 16px 24px;
-  border-top: 1px solid #EDEBE9;
+  border-top: 1px solid var(--color-border-primary);
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -273,257 +270,38 @@
 }
 
 .cancel-btn {
-  background: #F3F2F1;
-  color: #323130;
-  border: 1px solid #EDEBE9;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-primary);
 }
 
 .cancel-btn:hover {
-  background: #EDEBE9;
+  background: var(--color-bg-hover);
 }
 
 .save-btn {
-  background: #0078D4;
+  background: var(--color-primary);
   color: #FFFFFF;
 }
 
 .save-btn:hover {
-  background: #106EBE;
+  background: var(--color-primary-hover);
 }
 
 .save-btn:active {
-  background: #005A9E;
+  background: var(--color-primary-active);
 }
 
-/* Dark Mode - Class-based (manual theme selection) */
-html.dark .departments-title,
-:root.dark .departments-title {
-  color: #F3F2F1;
-}
-
-html.dark .departments-subtitle,
-:root.dark .departments-subtitle {
-  color: #A19F9D;
-}
-
-html.dark .table-container,
-:root.dark .table-container {
-  background: #292929;
-  border-color: #3B3B3B;
-}
-
-html.dark .departments-table thead,
-:root.dark .departments-table thead {
-  background: #3B3B3B;
-}
-
-html.dark .departments-table th,
-:root.dark .departments-table th {
-  color: #F3F2F1;
-  border-bottom-color: #484644;
-}
-
-html.dark .departments-table tbody tr,
-:root.dark .departments-table tbody tr {
-  border-bottom-color: #3B3B3B;
-}
-
-html.dark .departments-table tbody tr:hover,
-:root.dark .departments-table tbody tr:hover {
-  background: #3B3B3B;
-}
-
-html.dark .departments-table td,
-:root.dark .departments-table td {
-  color: #F3F2F1;
-}
-
-html.dark .student-count,
-:root.dark .student-count {
-  background: #1A3A52;
-  color: #6CB4EE;
-}
-
+/* Dark Mode - Modal overlay adjustment */
 html.dark .modal-overlay,
 :root.dark .modal-overlay {
   background: rgba(0, 0, 0, 0.7);
 }
 
-html.dark .modal-content,
-:root.dark .modal-content {
-  background: #292929;
-  border-color: #3B3B3B;
-}
-
-html.dark .modal-header,
-:root.dark .modal-header {
-  border-bottom-color: #3B3B3B;
-}
-
-html.dark .modal-header h3,
-:root.dark .modal-header h3 {
-  color: #F3F2F1;
-}
-
-html.dark .modal-close-btn,
-:root.dark .modal-close-btn {
-  color: #A19F9D;
-}
-
-html.dark .modal-close-btn:hover,
-:root.dark .modal-close-btn:hover {
-  background: #3B3B3B;
-  color: #F3F2F1;
-}
-
-html.dark .form-field label,
-:root.dark .form-field label {
-  color: #F3F2F1;
-}
-
-html.dark .form-field input,
-:root.dark .form-field input {
-  background: #1F1F1F;
-  border-color: #3B3B3B;
-  color: #F3F2F1;
-}
-
-html.dark .form-field input:hover,
-:root.dark .form-field input:hover {
-  border-color: #484644;
-}
-
-html.dark .modal-footer,
-:root.dark .modal-footer {
-  border-top-color: #3B3B3B;
-}
-
-html.dark .cancel-btn,
-:root.dark .cancel-btn {
-  background: #3B3B3B;
-  color: #F3F2F1;
-  border-color: #484644;
-}
-
-html.dark .cancel-btn:hover,
-:root.dark .cancel-btn:hover {
-  background: #484644;
-}
-
-/* Dark Mode - System preference fallback */
 @media (prefers-color-scheme: dark) {
-  html:not(.light) .departments-title,
-  :root:not(.light) .departments-title {
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .departments-subtitle,
-  :root:not(.light) .departments-subtitle {
-    color: #A19F9D;
-  }
-
-  html:not(.light) .table-container,
-  :root:not(.light) .table-container {
-    background: #292929;
-    border-color: #3B3B3B;
-  }
-
-  html:not(.light) .departments-table thead,
-  :root:not(.light) .departments-table thead {
-    background: #3B3B3B;
-  }
-
-  html:not(.light) .departments-table th,
-  :root:not(.light) .departments-table th {
-    color: #F3F2F1;
-    border-bottom-color: #484644;
-  }
-
-  html:not(.light) .departments-table tbody tr,
-  :root:not(.light) .departments-table tbody tr {
-    border-bottom-color: #3B3B3B;
-  }
-
-  html:not(.light) .departments-table tbody tr:hover,
-  :root:not(.light) .departments-table tbody tr:hover {
-    background: #3B3B3B;
-  }
-
-  html:not(.light) .departments-table td,
-  :root:not(.light) .departments-table td {
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .student-count,
-  :root:not(.light) .student-count {
-    background: #1A3A52;
-    color: #6CB4EE;
-  }
-
   html:not(.light) .modal-overlay,
   :root:not(.light) .modal-overlay {
     background: rgba(0, 0, 0, 0.7);
-  }
-
-  html:not(.light) .modal-content,
-  :root:not(.light) .modal-content {
-    background: #292929;
-    border-color: #3B3B3B;
-  }
-
-  html:not(.light) .modal-header,
-  :root:not(.light) .modal-header {
-    border-bottom-color: #3B3B3B;
-  }
-
-  html:not(.light) .modal-header h3,
-  :root:not(.light) .modal-header h3 {
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .modal-close-btn,
-  :root:not(.light) .modal-close-btn {
-    color: #A19F9D;
-  }
-
-  html:not(.light) .modal-close-btn:hover,
-  :root:not(.light) .modal-close-btn:hover {
-    background: #3B3B3B;
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .form-field label,
-  :root:not(.light) .form-field label {
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .form-field input,
-  :root:not(.light) .form-field input {
-    background: #1F1F1F;
-    border-color: #3B3B3B;
-    color: #F3F2F1;
-  }
-
-  html:not(.light) .form-field input:hover,
-  :root:not(.light) .form-field input:hover {
-    border-color: #484644;
-  }
-
-  html:not(.light) .modal-footer,
-  :root:not(.light) .modal-footer {
-    border-top-color: #3B3B3B;
-  }
-
-  html:not(.light) .cancel-btn,
-  :root:not(.light) .cancel-btn {
-    background: #3B3B3B;
-    color: #F3F2F1;
-    border-color: #484644;
-  }
-
-  html:not(.light) .cancel-btn:hover,
-  :root:not(.light) .cancel-btn:hover {
-    background: #484644;
   }
 }
 

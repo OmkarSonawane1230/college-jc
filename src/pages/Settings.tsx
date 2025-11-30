@@ -3,7 +3,6 @@ import { useAuth } from '../context/AuthContext';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Label from '../components/Label';
-import Alert from '../components/Alert';
 import { Eye, EyeOff } from 'lucide-react';
 import '../styles/Settings.css';
 
@@ -16,29 +15,23 @@ export default function Settings() {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [theme, setTheme] = useState<'system' | 'light' | 'dark'>('system');
-  const [passwordAlert, setPasswordAlert] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
-  const [themeAlert, setThemeAlert] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   const handlePasswordUpdate = (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!currentPassword || !newPassword || !confirmPassword) {
-      setPasswordAlert({ message: 'All password fields are required', type: 'error' });
       return;
     }
     
     if (newPassword !== confirmPassword) {
-      setPasswordAlert({ message: 'New passwords do not match', type: 'error' });
       return;
     }
     
     if (newPassword.length < 6) {
-      setPasswordAlert({ message: 'Password must be at least 6 characters', type: 'error' });
       return;
     }
     
-    // Simulate password update
-    setPasswordAlert({ message: 'Password updated successfully', type: 'success' });
+    // Simulate password update - no alert shown
     setCurrentPassword('');
     setNewPassword('');
     setConfirmPassword('');
@@ -51,11 +44,9 @@ export default function Settings() {
       document.documentElement.classList.remove('light', 'dark');
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.classList.add(systemTheme);
-      setThemeAlert({ message: 'Theme set to system preference', type: 'success' });
     } else {
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(newTheme);
-      setThemeAlert({ message: `Theme set to ${newTheme} mode`, type: 'success' });
     }
   };
 
@@ -81,13 +72,6 @@ export default function Settings() {
       {/* Update Password */}
       <div className="settings-section">
         <h2 className="settings-section-title">Update Password</h2>
-        {passwordAlert && (
-          <Alert
-            message={passwordAlert.message}
-            type={passwordAlert.type}
-            onClose={() => setPasswordAlert(null)}
-          />
-        )}
         <form onSubmit={handlePasswordUpdate} className="password-form">
           <div className="form-group">
             <Label htmlFor="currentPassword" className="form-label">Current Password</Label>
@@ -158,13 +142,6 @@ export default function Settings() {
       {/* Theme Settings */}
       <div className="settings-section">
         <h2 className="settings-section-title">Theme Preference</h2>
-        {themeAlert && (
-          <Alert
-            message={themeAlert.message}
-            type={themeAlert.type}
-            onClose={() => setThemeAlert(null)}
-          />
-        )}
         <div className="theme-options">
           <Button
             onClick={() => handleThemeChange('system')}

@@ -2,7 +2,7 @@ export interface User {
   id: string;
   username: string;
   password: string;
-  role: 'principal' | 'hod';
+  role: 'admin' | 'hod';
   name: string;
 }
 
